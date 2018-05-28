@@ -1,0 +1,594 @@
+#geoFail, #loading, #locationIllegal, .updating {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 999
+}
+
+#geoFail, #loading, #locationIllegal {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.updating {
+    opacity: .8;
+    display: none
+}
+
+#loading img, #updating img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    animation-duration: 1s;
+    animation-name: common-widget-loading;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: common-widget-loading;
+    -webkit-animation-timing-function: ease-out-in;
+    -webkit-animation-iteration-count: infinite
+}
+
+.search-wrap, .show, .updating {
+    position: fixed;
+    left: 0;
+    top: 0
+}
+
+.show {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    z-index: 999
+}
+
+#geoFail .error-msg, #locationIllegal .error-msg {
+    width: 150px;
+    height: 62px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: -51px
+}
+
+#geoFail img, #locationIllegal img {
+    display: block;
+    margin: 0 auto 12px
+}
+
+#geoFail span, #locationIllegal span {
+    width: 100px;
+    text-align: center;
+    color: gray;
+    font-size: 14px
+}
+
+#geoFail .refresh-btn {
+    width: 219px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #0079ff;
+    color: #0079ff;
+    text-align: center;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -108px;
+    border-radius: 4px
+}
+
+.search-wrap {
+    right: 0;
+    padding: 8px 60px 8px 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #d3d3d3;
+    z-index: 100
+}
+
+.map-wrap {
+    height: 300px;
+    position: relative;
+    top: 46px
+}
+
+.list-wrap {
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    overflow: hidden
+}
+
+.list-wrap .poi-scroller {
+    z-index: 1;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none
+}
+
+.list-wrap .poi-scroller .active-pos, .poi-list li {
+    height: 59px;
+    padding-top: 6px;
+    position: relative;
+    border-bottom: 1px solid #d3d3d3
+}
+
+.list-wrap .poi-scroller .active-pos {
+    margin-left: 15px;
+    overflow: hidden
+}
+
+.list-wrap .poi-scroller .active-pos .active, .poi-list .active {
+    width: 16px;
+    height: 16px;
+    display: none;
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/currentPos.png) no-repeat right center;
+    background-size: 16px 16px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -8px
+}
+
+.item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d3d3d3
+}
+
+.poi-title {
+    font-size: 14px;
+    line-height: 27px;
+    color: #333;
+    font-weight: 400;
+    display: block;
+    width: 92%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.blue-txt {
+    color: #0079ff !important;
+    font-weight: 700 !important
+}
+
+.poi-address {
+    font-size: 12px;
+    color: gray;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    width: 92%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block
+}
+
+.poi-city, .poi-latlng {
+    line-height: 22px;
+    display: none
+}
+
+.poi-list ul {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    margin: 0 0 0 15px;
+    padding: 0 0 65px
+}
+
+.poi-list li {
+    display: block
+}
+
+.poi-list .active {
+    right: 30px
+}
+
+.active-pos *, .poi-list li * {
+    pointer-events: none
+}
+
+.hide {
+    display: none
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #d3d3d3;
+    position: relative;
+    z-index: 5;
+    top: 0;
+    left: 0
+}
+
+#container .marker {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 36px;
+    margin-top: -28px;
+    margin-left: -12px;
+    z-index: 6
+}
+
+#container .marker img {
+    z-index: 1;
+    position: absolute
+}
+
+#container .marker i {
+    width: 8px;
+    height: 8px;
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/plus.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4.5px;
+    z-index: 0;
+    display: none
+}
+
+#container .go-back-pos {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 7px;
+    bottom: 7px;
+    z-index: 6;
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/navbg.png) no-repeat top left;
+    background-size: 44px 44px
+}
+
+#container .go-back-pos i {
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/nav.png) no-repeat center center;
+    background-size: 24px 24px;
+    display: block;
+    width: 44px;
+    height: 44px
+}
+
+#container #map-info {
+    position: absolute;
+    left: 58px;
+    bottom: 10px;
+    z-index: 6;
+    width: 46px
+}
+
+#container #map-info .scale {
+    font-size: 10px;
+    text-align: center;
+    position: relative;
+    line-height: 1;
+    white-space: nowrap;
+    padding-bottom: 3px;
+    margin-bottom: 21px;
+    left: 2px
+}
+
+#container #map-info .scale:before {
+    left: -1px;
+    right: -1px;
+    bottom: -3px;
+    border: 3px #fff solid
+}
+
+#container #map-info .scale:after {
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    border: 1px #000 solid
+}
+
+#container #map-info .scale:after, #container #map-info .scale:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    border-top: 0
+}
+
+#container #map-info .qqmap-text-logo {
+    width: 64px;
+    height: 16px;
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/logo.png) no-repeat left top;
+    background-size: 64px 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 6
+}
+
+#container #map-info .scale {
+    text-shadow: #fff 0 -1px, #fff 1px 0, #fff 0 1px, #fff -1px 0
+}
+
+#container .to-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 40px;
+    height: 80px;
+    background: #fff;
+    border: 1px solid #bababa;
+    border-radius: 50px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+    text-align: center;
+    font-size: 30px;
+    display: none
+}
+
+#container .to-right i {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: block
+}
+
+.search-wrap.init-status {
+    padding-right: 15px
+}
+
+.search-wrap .search-bar {
+    display: block;
+    height: 30px;
+    background-color: #ebebeb;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #b4b4b4;
+    font-size: 15px;
+    line-height: 31px;
+    border-radius: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.search-wrap .search-bar .keyword {
+    display: block;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 0;
+    font-size: 14px;
+    line-height: 18px;
+    background: 0 0
+}
+
+.search-wrap.init-status .search-bar .keyword {
+    text-align: left
+}
+
+.search-wrap .search-bar .keyword::-webkit-input-placeholder {
+    background: url(https://3gimg.qq.com/lightmap/components/locationPicker2//image/searchbg.png) no-repeat left center;
+    background-size: 80px 16px;
+    color: gray
+}
+
+.search-wrap.init-status .search-bar .keyword::-webkit-input-placeholder {
+    background: url(https://3gimg.qq.com/lightmap/components/locationPicker2//image/searchbg.png) no-repeat center center;
+    background-size: 80px 16px
+}
+
+.search-wrap .cancle, .search-wrap .submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 16px;
+    color: #0079ff;
+    background-color: #fff
+}
+
+.search-wrap .clear-input {
+    top: 11px;
+    right: 60px;
+    width: 34px;
+    height: 26px;
+    line-height: 26px;
+    background: url(https://3gimg.qq.com/lightmap/components/locationPicker2/image/close.png) no-repeat center center;
+    background-color: #ededed;
+    background-size: 18px 18px;
+    position: absolute;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 2
+}
+
+.search-wrap.init-status .cancle, .search-wrap.init-status .clear-input, .search-wrap.init-status .submit {
+    display: none
+}
+
+.suggestion-wrap {
+    position: absolute;
+    top: 46px;
+    bottom: 0;
+    z-index: 7;
+    width: 100%;
+    background: #f6f6f6;
+    overflow: hidden;
+    display: none
+}
+
+.suggestion-wrap .suggestion-scroller {
+    width: 100%
+}
+
+.suggestion-wrap .suggestion-scroller li {
+    position: relative;
+    display: block;
+    padding-top: 8px;
+    padding-left: 40px;
+    border: none;
+    background: url( https://3gimg.qq.com/lightmap/components/locationPicker2/image/search.png) no-repeat 10px 13px;
+    background-size: 16px 16px;
+    margin-left: -15px;
+    height: 58px;
+    overflow: hidden
+}
+
+.load-wrap, .no-more-results, .no-results {
+    color: gray;
+    padding: 20px 0;
+    line-height: 24px;
+    text-align: center
+}
+
+.load-wrap, .no-more-results {
+    margin-top: -65px;
+    display: none
+}
+
+.no-results {
+    display: block;
+    margin: 0 auto
+}
+
+.load-wrap .load-data {
+    width: 90px;
+    margin: 0 auto
+}
+
+.load-wrap img {
+    margin-right: 12px;
+    float: left;
+    animation-duration: 1s;
+    animation-name: common-widget-loading;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: common-widget-loading;
+    -webkit-animation-timing-function: ease-out-in;
+    -webkit-animation-iteration-count: infinite
+}
+
+*, body, html {
+    margin: 0;
+    padding: 0
+}
+
+button, input, input[type=button], input[type=reset], input[type=search], input[type=submit], select {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    font-family: inherit;
+    border: none
+}
+
+a, a:active, a:hover {
+    text-decoration: none
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+    background: #f6f6f6;
+    -webkit-user-select: none;
+    font-family: Helvetica, Tahoma, Verdana, "Microsoft Yahei", simsun, SimHei, Arial, sans-serif;
+    box-sizing: border-box;
+    font-size: 14px
+}
+
+li, ol, ul {
+    list-style: none
+}
+
+.hide {
+    display: none
+}
+
+.bounceInDown {
+    animation: bounceInDown 500ms infinite;
+    animation-direction: alternate;
+    -webkit-animation: bounceInDown 500ms infinite;
+    -webkit-animation-direction: alternate
+}
+
+@-webkit-keyframes bounceInDown {
+    0%, 60%, 75%, 90%, to {
+        -webkit-transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+    0%, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    25% {
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    50% {
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -20px, 0)
+    }
+    75% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+}
+
+@keyframes bounceInDown {
+    0%, 60%, 75%, 90%, to {
+        -webkit-transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+    0%, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    25% {
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    50% {
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -20px, 0)
+    }
+    75% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+}
+
+@-webkit-keyframes common-widget-loading {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+.iScrollLoneScrollbar {
+    width: 4px !important;
+    right: 2px !important
+}
+
+.iScrollLoneScrollbar .iScrollIndicator {
+    border: none !important
+}

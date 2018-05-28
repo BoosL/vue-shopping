@@ -1,0 +1,18 @@
+diff a/src/routes/index.js b/src/routes/index.js	(rejected hunks)
+@@ -128,13 +128,15 @@
+ //rentCenter
+ const RentIndex = r =>require(['../views/rent/rentIndex'],r);
+ const GoodsDetail = r =>require(['../views/rent/goodsDetail'],r);
++const ConfirmOrder = r =>require(['../views/rent/confirmOrder'],r);
++const orderPay = r =>require(['../views/rent/orderPay'],r);
+ 
+ const RentCenter = r =>require(['../views/rent/rentCenter'],r);
+ const RentMyOrder = r =>require(['../views/rent/rentMyOrder'],r);
+ const RentCharge = r =>require(['../views/rent/rentCharge'],r);
+ const RentDeposit = r =>require(['../views/rent/rentDeposit'],r);
+ const RentDepositDetail = r =>require(['../views/rent/rentDepositDetail'],r);
+-const ConfirmOrder = r =>require(['../views/rent/confirmOrder'],r);
++
+ const ToBeReturned = r =>require(['../views/rent/toBeReturned'],r);
+ const OverdueReturn = r =>require(['../views/rent/overdueReturn'],r); 
+ const HasTransferred = r =>require(['../views/rent/hasTransferred'],r);

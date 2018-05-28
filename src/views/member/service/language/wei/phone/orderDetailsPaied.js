@@ -1,0 +1,16 @@
+export default {
+    orderDetail:"زاكاس تەپسىلاتى",
+    orderNum:"زاكاس نۇمۇرى",
+    proName:"مەھسۇلات ئسمى",
+    teleNum:"يانفۇن نۇمۇرى",
+    attribution:"تەۋە رايۇن",
+    rechargeNum:"قاچلاش سوممىسى",
+    flowNum:"ئقىم ",
+    goodsAmount:"پۇل سوممىسى",
+    scorePay:"جۇغلانما نۇمۇر ئشلىتىش",
+    payStyle:"تۆلەش ئۇسۇلى",
+    payNum:"تۆلەيدىغان پۇل",
+    data:"زاكاس چۇشكەن ۋاقىت",
+    cancle:"بىكارلاش",
+    toPay:"پۇل تۆلەش",
+}

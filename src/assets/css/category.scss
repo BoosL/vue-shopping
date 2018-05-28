@@ -1,0 +1,93 @@
+    #category {
+        background: #FFF;
+        height: 100vh;
+        .m_header{
+            width:100%;
+            height:45px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            background:#fff;
+            line-height:45px;
+            font-size:18px;
+            span{
+                display:inline-block;
+                width:16px;
+                height:24px;
+                float:left;
+                margin-left:10px;
+                font-size:30px;
+            }
+            i{
+                font-size: 16px;
+                float: right;
+                font-style: normal;
+            }
+        }
+        
+        #rootlists {
+            height: 100vh;overflow: scroll;
+            width: 24%;
+            
+            float: left;
+            background: #fff;
+        }
+        #category-content {
+            float: right;
+            height: 100vh;overflow: scroll;
+            width: 76%;
+            background: #eee;
+            #carcontent {
+                word-wrap: break-word;
+            }
+        }
+        .bottom{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            border-top: 1px solid #eaeaea;
+            position: fixed;
+            bottom: 0;
+            background: #fff;
+            font-size: 18px;
+            text-align:left;
+            line-height:40px;
+            b{
+                color:#f37385;
+                
+            }
+            a{
+                color:#000000;
+            }
+            span{
+                width: 130px;
+                text-align: center;
+                height: 40px;
+                
+                color:#fff;
+                background: #f15353;
+                float:right;
+                display: inline-block;
+                a{
+                    font-size: 16px;
+                    color:#FFF;
+                }
+            }
+        }
+    }
+    
+    #rootList {
+        width: 101%;
+        background: #FFF;
+        font-size: .8rem;
+        .active {
+            background: #eee;
+            border-left: 2px solid red;
+            color: #f15353;
+        }
+        li {
+            line-height: 40px;
+            border-bottom: solid 1px #e5e5e5;
+            color: #333;
+        }
+
+    }

@@ -1,0 +1,15 @@
+export default {
+	title:"添加油卡",
+	name:"姓名",
+	placeName:"请输入您的姓名",
+	tele:"手机号码",
+	placeTele:"请输入手机号码",
+	oilCard:"加油卡",
+	placeOilCard:"请输入本人加油卡卡号",
+	btn:"绑定",
+	tips:"如何申请加油卡",
+	content:"线下办卡，用户可到任何一家加油站网点申请，需携带本人有效证件原件，即可办理。",
+	modelTip:"绑定须知",
+	modelContent:"充值前先去绑卡",
+	modelBtn:"我知道了",
+}
